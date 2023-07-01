@@ -1,6 +1,5 @@
 import os
 import time
-from sys import _MEIPASS
 from pathlib import Path
 
 def progress_print(output) -> None:
@@ -37,7 +36,7 @@ def unlock_fps() -> None:
     while not Path.exists(Path(roblox_folder, "ClientSettings")):
         time.sleep(.1)
 
-    with open(os.path.join(sys._MEIPASS, "ClientAppSettings.json"), "r") as file:
+    with open("ClientAppSettings.json", "r") as file:
         # Gets text from ClientAppSettings.json
         text = file.read()
         with open(Path(roblox_folder, "ClientSettings", "ClientAppSettings.json"), "w+") as file2:
